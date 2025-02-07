@@ -9,10 +9,6 @@ When('User click "Login" button', async () => {
     await LoginPage.clickLogin();
 });
 
-// Then('User should see "Epic sadface: Username is required" error message', async () => {
-//     expect(await LoginPage.getErrorMessageText()).toContain('Epic sadface: Username is required');
-// });
-
 Then('User should see {string} error message', async (expectedMessage: string) => {
     const errorMessage = await LoginPage.getErrorMessageText();
     if (!errorMessage.includes(expectedMessage)) {
